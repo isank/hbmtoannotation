@@ -5,7 +5,7 @@ A Python based utility to convert your hbm (hibernate mapping xml) files to anno
 ## Usage
 
 ```python
-python main.py <path_to_hbm_file>
+python main.py
 ```
 
 This will generate a Java file in the same path as your hbm file
