@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.locationguru.wfms.employee.model">
+    <class name="EmployeeVO" table="employee" lazy="false" dynamic-insert="true">
+        <id name="id" column="id" type="java.lang.Long">
+            <generator class="identity"/>
+        </id>
+        <property name="customerId" column="customerId" type="java.lang.Long"
+                  not-null="false"/>
+        <property name="mobileNumber" column="mobileNumber" type="java.lang.String"
+                  not-null="false"/>
+        <property name="firstName" column="firstName" type="java.lang.String"
+                  not-null="false"/>
+        <property name="lastName" column="lastName" type="java.lang.String"
+                  not-null="false"/>
+        <property name="imeiNumber" column="imeiNumber" type="java.lang.String"
+                  not-null="false"/>
+        <property name="address" column="address" type="java.lang.String"
+                  not-null="false"/>
+        <property name="departmentId" column="departmentId" type="java.lang.Integer"
+                  not-null="false"/>
+        <property name="designationId" column="designationId" type="java.lang.Integer"
+                  not-null="false"/>
+
+        <property name="cdrAttempt" column="cdrAttempt" type="java.lang.Integer"
+                  not-null="false"/>
+
+        <property name="email" column="email" type="java.lang.String"
+                  not-null="false"/>
+        <property name="isActivated" column="isActivated" type="java.lang.String"
+                  not-null="false"/>
+
+        <property name="isEnabled" column="isEnabled" type="java.lang.String"
+                  not-null="false"/>
+
+        <property name="comments" column="comments" type="java.lang.String"
+                  not-null="false"/>
+
+        <property name="operationByNumber" column="operationByNumber"
+                  type="java.lang.String" not-null="false"/>
+        <property name="operationByName" column="operationByName"
+                  type="java.lang.String" not-null="false"/>
+        <property name="operation" column="operation" type="java.lang.String"
+                  not-null="false"/>
+
+        <property name="onSecondAttempt" column="onSecondAttempt"
+                  type="java.sql.Timestamp" not-null="false"/>
+
+
+        <property name="locationStatus" column="locationStatus" type="java.lang.String"
+                  not-null="false"/>
+
+        <property name="locationTimestamp" column="locationTimestamp"
+                  type="java.sql.Timestamp" not-null="false"/>
+
+
+        <property name="billingDate" column="billingDate" type="java.sql.Timestamp"
+                  not-null="false"/>
+
+
+        <property name="activationDate" column="activationDate" type="java.sql.Timestamp"
+                  not-null="false"/>
+
+        <property name="deActivationDate" column="deActivationDate"
+                  type="java.sql.Timestamp" not-null="false"/>
+
+        <property name="timestamp" column="timestamp" type="java.sql.Timestamp"
+                  not-null="false" insert="false" update="false"/>
+
+        <property name="userRoleId" column="userRoleId" type="java.lang.Integer"
+                  not-null="false"/>
+        <property name="onlineTimestamp" column="onlineTimestamp"
+                  type="java.sql.Timestamp" not-null="false"/>
+        <property name="offlineTimestamp" column="offlineTimestamp"
+                  type="java.sql.Timestamp" not-null="false"/>
+        <property name="offlineMode" column="offlineMode" type="java.lang.String"
+                  not-null="false"/>
+        <property name="deviceType" column="deviceType" type="java.lang.String"
+                  not-null="false"/>
+        <property name="devicePin" column="devicePin" type="java.lang.String"
+                  not-null="false"/>
+        <property name="tz" column="tz" type="java.lang.String"
+                  not-null="false"/>
+        <property name="poiId" column="poiId" type="java.lang.Integer"
+                  not-null="false"/>
+
+        <property name="trailStartTime" column="trailStartTime" type="java.sql.Timestamp"
+                  not-null="false"/>
+        <property name="trailEndTime" column="trailEndTime" type="java.sql.Timestamp"
+                  not-null="false"/>
+        <property name="trailStatus" column="trailStatus" type="java.lang.Integer"
+                  not-null="false"/>
+        <property name="requestId" column="trailRequestId" type="java.lang.String"
+                  not-null="false"/>
+
+        <property name="locationSource" column="locationSource" type="java.lang.Integer"
+                  not-null="false"/>
+
+        <property name="zoneId" column="zoneId" type="java.lang.Long"
+                  not-null="false"/>
+        <property name="stateId" column="stateId" type="java.lang.Long"
+                  not-null="false"/>
+        <property name="cityId" column="cityId" type="java.lang.Long"
+                  not-null="false"/>
+        <property name="serviceCentreId" column="serviceCentreId" type="java.lang.Long"
+                  not-null="false"/>
+
+        <property name="locationGroupId" column="locationGroupId" type="java.lang.Long"
+                  not-null="false"/>
+        <property name="isBackOfficeUser" column="isBackOfficeUser" type="java.lang.String"
+                  not-null="false"/>
+        <property name="deleted" column="deleted" type="java.lang.Boolean" not-null="false"/>
+
+        <property name="identityId" column="identityid" type="java.lang.String" not-null="false"/>
+        <property name="subscriptionId" column="subscriptionid" type="java.lang.String" not-null="false"/>
+        <property name="otp" column="otp" type="java.lang.Integer" not-null="false"/>
+        <property name="otpRequestTime" column="otprequesttime" type="java.sql.Timestamp"
+                  not-null="false"/>
+
+        <property name="totalLeave" column="totalLeave" type="java.lang.Integer"
+                  not-null="false"/>
+        <property name="balanceLeave" column="balanceLeave" type="java.lang.Integer"
+                  not-null="false"/>
+        <property name="dob" column="dob" type="java.util.Date"
+                  not-null="false"/>
+        <property name="bloodGroup" column="bloodgroup" type="java.lang.String"
+                  not-null="false"/>
+        <property name="emergencyContact" column="emergencycontact" type="java.lang.String"
+                  not-null="false"/>
+        <property name="profilePicture" column="profilePicture" type="java.lang.String"
+                  not-null="false"/>
+    </class>
+
+
+    <sql-query name="employeewisetaskcountquery">
+        <return-scalar column="id" type="java.lang.Long"/>
+        <return-scalar column="name" type="string"/>
+        <return-scalar column="taskCount" type="java.lang.Integer"/>
+        <return-scalar column="lat" type="java.lang.Double"/>
+        <return-scalar column="lon" type="java.lang.Double"/>
+        <return-scalar column="bpId" type="java.lang.String"/>
+        select o.id as id, firstname as name,taskCount,l.latitude as lat ,l.longitude as lon, u.bpid AS bpId from (
+        select e.id as id, e.firstname as name,count(t.employeeid) as taskCount from employee e left join task t on e.id
+        = t.employeeid and
+        t.status not in (select statusid from status where name in (:statuses) and customerid = :customerId) and
+        t.deleted=false
+        where e.userroleid = 4 and e.deleted = false and e.locationgroupid = :serviceCenterId and e.id not in
+        (:empNotIn)
+        group by e.id,e.firstname
+        ) as o JOIN "user" u ON u.employeeId = o.id LEFT JOIN latestlocation l ON l.userId = u.id
+        ORDER BY name ASC
+    </sql-query>
+
+    <sql-query name="employeetotalcountquery">
+        <return-scalar column="count" type="java.lang.Integer"/>
+        select count(1) as count from employee e where e.userroleid = 4 and e.deleted = false and e.locationgroupid =
+        :serviceCenterId and e.id not in (:empNotIn)
+        and e.customerid= :customerId
+
+    </sql-query>
+
+
+    <sql-query name="employeewisetasklikecountquery">
+        <return-scalar column="id" type="java.lang.Long"/>
+        <return-scalar column="name" type="string"/>
+        <return-scalar column="taskCount" type="java.lang.Integer"/>
+        <return-scalar column="lat" type="java.lang.Double"/>
+        <return-scalar column="lon" type="java.lang.Double"/>
+        select o.id as id, firstname as name,taskCount,l.latitude as lat ,l.longitude as lon, u.bpid AS bpId from (
+        select e.id as id, e.firstname as name,count(t.employeeid) as taskCount from employee e left join task t on e.id
+        = t.employeeid and
+        t.status not in (select statusid from status where name in (:statuses) and customerid = :customerId) and
+        t.deleted=false
+        where e.userroleid = 4 and e.deleted = false and e.locationgroupid = :serviceCenterId and e.id not in
+        (:empNotIn) and
+        (LOWER(e.firstname) like LOWER(:firstname) or LOWER(e.lastname) like LOWER(:lastname) )
+        group by e.id,e.firstname
+        ) as o JOIN "user" u ON u.employeeId = o.id LEFT JOIN latestlocation l ON l.userId = u.id
+    </sql-query>
+
+    <sql-query name="employeetotallikecountquery">
+        <return-scalar column="count" type="java.lang.Integer"/>
+        select count(1) as count from employee e where e.userroleid = 4 and e.deleted = false and e.locationgroupid =
+        :serviceCenterId and e.id not in (:empNotIn)
+        and e.customerid= :customerId and
+        (LOWER(e.firstname) like LOWER(:firstname) or LOWER(e.lastname) like LOWER(:lastname) )
+    </sql-query>
+
+
+    <sql-query name="employeetaskcount">
+        <return-scalar column="taskCount" type="java.lang.Long"/>
+        select count(t.employeeid) as taskCount from employee e left join task t on e.id = t.employeeid and
+        t.status not in (select statusid from status where name in (:statuses) and customerid = :customerId) and
+        t.deleted=false
+        where e.userroleid = 4 and e.deleted = false and e.id= :empId
+
+    </sql-query>
+
+    <sql-query name="servicewithemployeecount">
+        <return-scalar column="count" type="java.lang.Long"/>
+        select count(e.id) as count from employee e left join task t on e.id = t.employeeid and
+        t.status not in (select statusid from status where name in (:statuses) and customerid = :customerId)
+        where e.userroleid = 4 and e.deleted = false and e.locationgroupid = :serviceCenterId
+    </sql-query>
+
+
+    <sql-query name="getTaskCountByTaskStatus">
+        <![CDATA[select s.statusid, s.displayname, count(t.status) as statusCount, count(*) as totalTaskCount,s.color as color, s.eventid from status s left join task t on t.status = s.statusId left join employee e on e.id = t.employeeId where t.assignedDate >= :startDate and t.assignedDate <= :endDate and t.customerid = :customerId and e.locationgroupid in (:locGrpIds) and t.status IN (:statusIds) and t.deleted = false group by s.statusid]]>
+    </sql-query>
+
+    <sql-query name="getTaskCountByTaskStatusForSelectedEmp">
+        <![CDATA[select s.statusid, s.displayname, count(t.status) as statusCount, count(*) as totalTaskCount,s.color as color, s.eventid from status s left join task t on t.status = s.statusId left join employee e on e.id = t.employeeId where t.assignedDate >= :startDate and t.assignedDate <= :endDate and t.customerid = :customerId and e.locationgroupid in (:locGrpIds) and t.status IN (:statusIds) and t.employeeId IN (:empIds) and t.deleted = false group by s.statusid]]>
+    </sql-query>
+
+    <sql-query name="servicecenterwiseusercountquery">
+        <return-scalar column="count" type="java.lang.Integer"/>
+        select count(1) as count from "user" u join employee e on u.employeeid = e.id join locationgroup l on l.id =
+        e.locationgroupid where
+        u.bpid = :bpId and
+        u.userroleid = :roleId and e.deleted = false and e.customerid = :customerId and l.clientid = :serviceCenter
+    </sql-query>
+
+    <sql-query name="employeebycustomer">
+        <return-scalar column="id" type="java.lang.Long"/>
+        <return-scalar column="imeiNumber" type="string"/>
+        <return-scalar column="mobileNumber" type="java.lang.String"/>
+        <return-scalar column="userId" type="java.lang.Long"/>
+        <return-scalar column="customerId" type="java.lang.Long"/>
+        <return-scalar column="departmentId" type="java.lang.Integer"/>
+        SELECT
+        emp.id as "id",
+        emp.imeinumber as "imeiNumber",
+        emp.mobileNumber as "mobileNumber",
+        usr.id as "userId",
+        emp.customerId as "customerId",
+        emp.departmentId as "departmentId"
+        FROM employee emp
+        INNER JOIN "user" usr ON usr.employeeId = emp.id
+        WHERE emp.customerId=:customerId
+        AND emp.deleted=false
+        AND emp.userroleId=:userroleId
+    </sql-query>
+
+    <sql-query name="countemployeebycustomer">
+        select count(1) from employee emp inner join "user" usr
+        on usr.employeeId = emp.id where emp.customerId=:customerId and emp.deleted=false and emp.userroleId=:userroleId
+    </sql-query>
+
+    <sql-query name="getuserbasicdetails">
+        <return class="com.locationguru.wfms.employee.model.EmployeeVO"/>
+        <return class="com.locationguru.wfms.user.model.UserVO"/>
+        SELECT *
+        FROM employee emp
+        LEFT JOIN "user" usr ON emp.id = usr.employeeId
+        WHERE emp.id = :employeeId
+        GROUP by emp.id, usr.id
+    </sql-query>
+
+    <sql-query name="getuserattendance">
+        <return class="com.locationguru.wfms.attendance.model.AttendanceVO"/>
+        SELECT * FROM attendance WHERE employeeid = :employeeId AND CAST(requesttime AS DATE) = CURRENT_DATE
+    </sql-query>
+
+    <sql-query name="getemployeeskills">
+        <return class="com.locationguru.wfms.skill.model.SkillVO"/>
+        SELECT * FROM skillstoempmapping stemp
+        LEFT JOIN skill s ON stemp.skill_id = s.id
+        WHERE stemp.emp_id = :employeeId
+    </sql-query>
+
+    <sql-query name="getemployeeleaves">
+        <return class="com.locationguru.wfms.leave.model.LeaveVO"/>
+        <return class="com.locationguru.wfms.leavetype.model.LeaveTypeVO"/>
+        SELECT * FROM leave l
+        LEFT JOIN leavetype lt ON lt.id = l.leavetypeid
+        WHERE l.empid = :employeeId
+    </sql-query>
+
+    <sql-query name="getemployeedevice">
+        <return class="com.locationguru.wfms.device.model.DeviceVO"/>
+        SELECT d.* FROM devicetoempmapping dte
+        LEFT JOIN device d ON dte.deviceid = d.id
+        WHERE dte.empid = :employeeId
+        AND dte.endtime IS NULL ORDER BY dte.starttime DESC LIMIT 1
+    </sql-query>
+
+    <sql-query name="exportemployeedetails">
+        SELECT
+        emp.mobilenumber AS mobilenumber,
+        emp.firstname AS firstname,
+        emp.lastname AS lastname,
+        emp.email AS email,
+        lg.clientid AS serviceCentreId,
+        u.bpid AS BPID
+        FROM employee emp
+        LEFT JOIN locationgroup lg ON lg.id = emp.locationgroupid
+        LEFT JOIN "user" u ON u.employeeid = emp.id
+        WHERE emp.customerid = :customerId
+        AND emp.deleted = FALSE
+    </sql-query>
+
+    <sql-query name="employeedetailsusingbpids">
+        <return class="com.locationguru.wfms.employee.model.EmployeeVO"/>
+        SELECT e.*
+        FROM employee e
+        LEFT JOIN "user" u ON u.employeeid = e.id
+        WHERE e.customerid = :customerId
+        AND u.bpid IN :bpIds
+        AND e.deleted = FALSE
+        AND u.deleted = FALSE
+    </sql-query>
+
+    <sql-query name="get_all_employees_by_geofence_id">
+        <return class="com.locationguru.wfms.employee.model.EmployeeVO"/>
+        <return class="com.locationguru.wfms.user.model.UserVO"/>
+        SELECT *
+        FROM geofence_employee_mapping gem
+        LEFT JOIN geofence g ON gem.geofence_id = g.id
+        LEFT JOIN employee e ON gem.employee_id = e.id
+        LEFT JOIN "user" u ON u.employeeid = e.id
+        WHERE
+        gem.deleted = FALSE AND
+        g.deleted = FALSE AND
+        e.deleted = FALSE AND
+        gem.geofence_id = :geofenceId
+    </sql-query>
+    
+    <sql-query name="employee_details_by_center">
+        <return class="com.locationguru.wfms.employee.model.EmployeeVO" />
+        <return-scalar column="centerId" type="java.lang.String" />
+        <return-scalar column="bpId" type="java.lang.String" />
+        SELECT
+        e.*,
+        lg.clientid AS centerId,
+        u.bpid AS bpId
+        FROM employee e
+        LEFT JOIN "user" u ON u.employeeid = e.id
+        LEFT JOIN locationgroup lg ON lg.id = e.locationgroupid
+        WHERE e.customerid = :customerId
+        AND e.deleted = FALSE
+        AND (lg.id IN (:centerIds) OR lg.id IS NULL);
+    </sql-query>
+
+    <sql-query name="employee_details">
+        <return class="com.locationguru.wfms.employee.model.EmployeeVO" />
+        <return-scalar column="bpId" type="java.lang.String" />
+        <return-scalar column="taskCount" type="java.lang.Long" />
+        SELECT
+        e.*,
+        u.bpid      AS bpId,
+        COUNT(t.id) AS taskCount
+        FROM employee e
+        LEFT JOIN "user" u ON u.employeeid = e.id
+        LEFT JOIN task t ON t.employeeid = e.id AND t.status NOT IN (SELECT statusid
+        FROM status s
+        WHERE s.name IN (:exclusiveStatus) AND
+        s.customerid = :customerId)
+        WHERE
+        e.deleted = FALSE AND e.customerid = :customerId AND e.userroleid = :userRoleId AND e.locationgroupid IN (:centreIds)
+        GROUP BY e.id, u.bpid
+        ORDER BY e.id
+    </sql-query>
+
+</hibernate-mapping>

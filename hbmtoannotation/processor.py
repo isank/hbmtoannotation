@@ -3,25 +3,30 @@ class Processor:
         self.name = name
 
     def processRoot(self, element):
-        return 'package ' + element.get('package') + ';\n'
+        return f"package {element.get('package')}\n"
 
     def processClass(self, element):
-        result = '@Entity' + '\n'
-        result += '@Table(name="' + element.get('table') + '")' + '\n'
-        result += 'class ' + element.get('name') + '\n'
-        result += '{' + '\n'
-        return result
-    
+        return f"""
+        @Entity
+        @Table(name="{element.get('table')}")
+        class {element.get('name')}
+        {{
+        """
+
     def processId(self, element):
-        result = '@Id' + '\n'
-        result += '@Column(name="' + element.get('column') + '")' + '\n'
-        result += 'private ' + element.get('type') + ' ' + element.get('name') + ';\n'
-        return result
-    
+        return f"""
+        @Id
+        @Column(name="{element.get('column')}")
+        private {element.get('type')} {element.get('name')};
+
+        """
+
     def processProperty(self, element):
-        result = '@Column(name="' + element.get('column') + '")' + '\n'
-        result += 'private ' + element.get('type') + ' ' + element.get('name') + ';\n'
-        return result
+        return f"""
+        @Column(name="{element.get('column')}")
+        private {element.get('type')} {element.get('name')};
+
+        """
 
     def processEnd(self, element):
         if element == 'end':
