@@ -14,7 +14,7 @@ args_len = len(arguments)
 
 def processHbm():
     # get root of the document i.e hibernate-mapping tag
-    hibernate_mapping = ETree.parse(file_path).getroot()
+    hibernate_mapping = ETree.parse(hbm_file).getroot()
 
     # get class tag
     clazz = hibernate_mapping.find('class')
@@ -24,7 +24,7 @@ def processHbm():
 
     process_delegator = ProcessDelegator("process_delegator")
 
-    writer = Writer('java_file_writer', file_path[:file_path.rfind('/') + 1] + clazz.get('name') + '.java')
+    writer = Writer('java_file_writer', hbm_file[:hbm_file.rfind('/') + 1] + clazz.get('name') + '.java')
 
     writer.write(process_delegator.delegate(hibernate_mapping))
 
@@ -42,11 +42,11 @@ def processHbm():
 
 if args_len > 0:
 
-    file_path = path.abspath(arguments[0])
+    hbm_file = path.abspath(arguments[0])
 
     # Check if argument is a file or a directory
-    if not path.isfile(file_path):
-        print(f"'{file_path} is not a file ")
+    if not path.isfile(hbm_file):
+        print(f"'{hbm_file} is not a file ")
         exit(0)
 
     processHbm()
